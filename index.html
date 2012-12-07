@@ -1,51 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Designer-charting : Charting Object for Adobe LiveCycle Designer" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Designer-charting by fileaffairs</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>designer-charting</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>Designer-charting</h1>
+        <p>Charting Object for Adobe LiveCycle Designer</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/fileaffairs/designer-charting">View on GitHub</a>
+        <p class="view"><a href="https://github.com/fileaffairs/designer-charting">View the Project on GitHub <small>fileaffairs/designer-charting</small></a></p>
 
-          <h1 id="project_title">designer-charting</h1>
-          <h2 id="project_tagline">Charting Object for Adobe LiveCycle Designer</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/fileaffairs/designer-charting/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/fileaffairs/designer-charting/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <ul>
+          <li><a href="https://github.com/fileaffairs/designer-charting/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/fileaffairs/designer-charting/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/fileaffairs/designer-charting">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>DesignerCharting</h1>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>designer-charting</h1>
+<h2>About</h2>
 
-<p>Charting Object for Adobe LiveCycle Designer</p>
+<p>DesignerCharting is a collection of charting objects for Adobe LiveCycle Designer. 
+The main purpose is to provide business charting capabilities to Adobe LiveCycle Output
+and Adobe LiveCycle Forms as well as Adobe Acrobat and Adobe Reader.</p>
+
+<p>DesignerCharting can also be used with SAP's Adobe Document Services (ADS), which is where
+the project started. It is used to provide charting capabilities for utilities customers
+as part of their statement presentment process. Configured correctly it's possible to 
+produce several hundred charts per minute.</p>
+
+<p>We are currently in the process of providing documentation and samples for the component.</p>
+
+<p>The code will be provided at a later stage.</p>
+
+<h2>Supported Chart Types</h2>
+
+<p>DesignerCharting currently supports column, stacked column, bar and stacked bar chart
+types. Additional chart types are under development.</p>
+
+<h2>Basic usage</h2>
+
+<p>DesignerCharting is driven by binding or supplying (XML) data with two main child nodes
+nodes. The name of the root node for the chart can be freely chosen.</p>
+
+<div class="highlight"><pre>...
+ <span class="nt">&lt;chart&gt;</span>
+     <span class="nt">&lt;options&gt;</span>
+        ....
+     <span class="nt">&lt;/options&gt;</span>
+     <span class="nt">&lt;dataSeries&gt;</span>
+       ...
+     <span class="nt">&lt;/dataSeries&gt;</span>
+ <span class="nt">&lt;/chart&gt;</span>
+...    
+</pre></div>
+
+<p>The generation of the chart is done by calling the initialization and rendering within
+the LiveCycle Designer events e.g. the initialize event of the DesignerCharting object</p>
+
+<div class="highlight"><pre>    <span class="nx">DesignerCharting</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="nx">DesignerCharting</span><span class="p">.</span><span class="nx">ColumnChart</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+</pre></div>
+
+<p>The above code renders a ColumnChart where the data node for the chart must be bound to
+the DesignerChart object. If this is not the case the reference to the data node can be
+passed in the init call. The example below passes a reference to a node called 
+$data.chartData.</p>
+
+<div class="highlight"><pre>    <span class="nx">DesignerCharting</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">$data</span><span class="p">.</span><span class="nx">chartData</span><span class="p">);</span>
+</pre></div>
       </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">designer-charting maintained by <a href="https://github.com/fileaffairs">fileaffairs</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/fileaffairs">fileaffairs</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-
   </body>
 </html>
