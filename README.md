@@ -28,15 +28,15 @@ nodes. The name of the root node for the chart can be freely chosen.
      <options>
         ....
      </options>
-     <dataSeries>
+     <dataSet>
        ...
-     </dataSeries>
+     </dataSet>
  </chart>
 ...    
 ```
 
-## Data Series ##
-The ``dataSeries`` node contans the data for the chart and the optional table below the chart.
+## Data Set ##
+The ``dataSet`` node contans the data for the chart and the optional table below the chart.
 Each individual data row should be called ``serie`` containing the data items per serie.
 
 The ``serie`` node may have one ``name``element containing the name of the data serie and
@@ -44,7 +44,7 @@ multiple ``data``elements containing the data for the items within the ``serie``
 
 So a sample data might look like:
 ```xml
-<dataSeries>
+<dataSet>
 	<serie>
 		<name>Serie 01</name>
 		<data>100.00</data>
@@ -60,7 +60,7 @@ So a sample data might look like:
 		<data>230.00</data>
 	</serie>
 	...
-</dataSeries>
+</dataSet>
 ```
 
 ## Generating the Chart ##
