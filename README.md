@@ -35,6 +35,36 @@ nodes. The name of the root node for the chart can be freely chosen.
 ...    
 ```
 
+## Data Series ##
+The ``dataSeries`` node contans the data for the chart and the optional table below the chart.
+Each individual data row should be called ``serie`` containing the data items per serie.
+
+The ``serie`` node may have one ``name``element containing the name of the data serie and
+multiple ``data``elements containing the data for the items within the ``serie``.
+
+So a sample data might look like:
+```xml
+<dataSeries>
+	<serie>
+		<name>Serie 01</name>
+		<data>100.00</data>
+		<data>110.00</data>
+		<data>120.00</data>
+		<data>130.00</data>
+	</serie>
+	<serie>		
+		<name>Serie 02</name>
+		<data>200.00</data>
+		<data>210.00</data>
+		<data>220.00</data>
+		<data>230.00</data>
+	</serie>
+	...
+</dataSeries>
+```
+
+## Generating the Chart ##
+
 The generation of the chart is done by calling the initialization and rendering within
 the LiveCycle Designer events e.g. the initialize event of the DesignerCharting object
 
